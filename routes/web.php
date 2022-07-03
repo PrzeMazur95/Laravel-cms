@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,5 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin', [AdminsController::class, 'index'])->name('admin.index');
+
+Route::get('/post', [PostController::class, 'show'])->name('post')->name('post');
