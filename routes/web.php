@@ -20,9 +20,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
 
-Route::get('/admin', [AdminsController::class, 'index'])->name('admin.index');
+Route::middleware('auth')->group(function(){
 
-Route::get('/post', [PostController::class, 'show'])->name('post')->name('post');
+    Route::get('/admin', [AdminsController::class, 'index'])->name('admin.index');
 
-Route::get('/post/{post}', [PostController::class, 'show']);
+
+});
