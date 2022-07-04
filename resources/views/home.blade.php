@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-footer text-muted">
                     Posted on {{$post->created_at->diffForHumans()}}, by {{$post->user->name}}
-{{--                    <a href="#">Start Bootstrap</a>--}}
+
                 </div>
             </div>
         @endforeach
