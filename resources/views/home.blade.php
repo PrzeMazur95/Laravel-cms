@@ -11,11 +11,11 @@
                 <img class="card-img-top" src="{{$post->post_image}}" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">{{$post->title}}</h2>
-                    <p class="card-text">{{$post->body}}</p>
-                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                    <p class="card-text">{{Str::limit($post->body, '50', '......')}}</p>
+                    <a href="/post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on {{$post->created_at}}, 2017 by {{$post->user->name}}
+                    Posted on {{$post->created_at->diffForHumans()}}, by {{$post->user->name}}
 {{--                    <a href="#">Start Bootstrap</a>--}}
                 </div>
             </div>

@@ -24,3 +24,5 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/admin', [AdminsController::class, 'index'])->name('admin.index');
 
 Route::get('/post', [PostController::class, 'show'])->name('post')->name('post');
+
+Route::get('/post/{post}', [PostController::class, 'show']);
