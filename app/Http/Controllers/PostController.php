@@ -21,11 +21,11 @@ class PostController extends Controller
         return view('admin/posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
 
 
-        $inputs = request()->validate([
+        $inputs = $request->validate([
             'title'=>'required|min:8|max:255',
             'post_image'=>'file',
             'body'=>'required'
@@ -33,12 +33,12 @@ class PostController extends Controller
 
         if(request('post_image')){
 
-            $inputs['post_image'] = request('post_iamge')->store('images');
+            $inputs['post_image'] = request('post_image')->store('images');
 
         }
 
-    auth()->user();
-    dd(request());
+        auth()->user()->posts()->create($inputs);
+        return back();
 
     }
 }
