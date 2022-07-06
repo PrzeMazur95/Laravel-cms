@@ -380,7 +380,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{asset('js/sb-admin-2.js')}}"></script>
-
+@yield('scripts')
 </body>
 
 </html>
