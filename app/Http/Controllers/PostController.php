@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -48,6 +49,17 @@ class PostController extends Controller
         }
 
         auth()->user()->posts()->create($inputs);
+        return back();
+
+    }
+
+    public function delete(Post $post){
+
+        $post->delete();
+
+        //session data for one request, it desapears immidiatelly, we getting it in view, to show to user
+        Session::flash('message', 'Post has been deleted');
+
         return back();
 
     }
