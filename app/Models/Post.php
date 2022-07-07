@@ -25,6 +25,7 @@ class Post extends Model
 //
 //    }
 
+//lepiej korzystac z poniższego, ponieważ górna metoda na stałe w db zapisze zmianę, poniższa dynamicznie dodaje to cochcemy, zaznim zwróci nam variable
 // tutaj zastosujemy akcesor, zwraca zmieniony string z db o to co chcemy, w tym przypadku asset, czyli path do public/images
 
     public function getPostImageAttribute($value) {
