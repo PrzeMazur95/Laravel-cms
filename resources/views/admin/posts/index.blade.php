@@ -2,9 +2,9 @@
 
     @section('content')
         <h1>All Posts</h1>
-        @if(Session::has('message'))
+        @if(Session::has('message', 'type'))
 
-            <div class="alert alert-danger text-center">{{Session::get('message')}}</div>
+            <div class="alert alert-{{Session::get('type')}} text-center">{{Session::get('message')}}</div>
 
         @endif
         <div class="table-responsive">

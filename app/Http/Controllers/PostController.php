@@ -49,7 +49,9 @@ class PostController extends Controller
         }
 
         auth()->user()->posts()->create($inputs);
-        return back();
+        Session::flash('message', 'Post has been created');
+        Session::flash('type', 'success');
+        return redirect()->route('post.index');
 
     }
 
@@ -59,6 +61,7 @@ class PostController extends Controller
 
         //session data for one request, it desapears immidiatelly, we getting it in view, to show to user
         Session::flash('message', 'Post has been deleted');
+        Session::flash('type', 'danger');
 
         return back();
 
