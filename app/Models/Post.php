@@ -16,6 +16,8 @@ class Post extends Model
        return $this->belongsTo('App\Models\User');
 
     }
+
+    //Odnośnie poniższego, teraz jest getPostImageAttribute, ponieważ nazwa kolumny w dob to post_image, jeżeli nazwa kolumny byłaby image, wtedy nazwa funkcji to getImageAttribute, taka jest konwencja
 //mutator, zmienia value zanim wrzuci do DB, w tym przypadku dodaje ścieżkę do public, żeby wrzucać poprawny path od db
 //    public function setPostImageAttribute($value){
 //
