@@ -18,6 +18,7 @@ class PostController extends Controller
 
 
     }
+
     public function show(Post $post)
     {
 
@@ -52,6 +53,13 @@ class PostController extends Controller
         Session::flash('message', 'Post has been created');
         Session::flash('type', 'success');
         return redirect()->route('post.index');
+
+    }
+
+    public function edit(Post $post)
+    {
+
+        return view('admin.posts.edit', ['post'=>$post]);
 
     }
 
