@@ -2,7 +2,7 @@
 
     @section('content')
         <h1>Edit Post</h1>
-        <form method="post" action="{{route('post.edit')}}" enctype="multipart/form-data">
+{{--        <form method="post" action="{{route('post.edit')}}" enctype="multipart/form-data">--}}
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
