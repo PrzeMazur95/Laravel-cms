@@ -63,6 +63,38 @@ class PostController extends Controller
 
     }
 
+    public function update(Post $post)
+    {
+
+        //validation, to no let user update fields as an empty data
+
+        $inputs = request()->validate([
+
+            'title'=>'required|min:8|max:255',
+            'post_image'=>'file',
+            'body'=>'required'
+
+        ]);
+
+        if(request('post_image')){
+
+            $inputs['post_image'] = request('post_image')->store('images');
+            $post->post_image=$inputs['post_image'];
+        }
+        $post->title = $inputs['title'];
+        $post->body = $inputs['body'];
+
+        Session::flash('message', 'Post has been updated');
+        Session::flash('type', 'success');
+
+        auth()->user()->posts()->save($post);
+
+        return redirect()->route('post.index');
+
+
+
+    }
+
     public function delete(Post $post){
 
         $post->delete();
