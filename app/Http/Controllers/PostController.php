@@ -86,7 +86,7 @@ class PostController extends Controller
 
         //policy authorizaztion, you can only ipdate your own post, where user_id is yours id
 
-        $this->authorize('update', $post);
+//        $this->authorize('update', $post);
 
         Session::flash('message', 'Post has been updated');
         Session::flash('type', 'success');

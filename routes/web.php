@@ -29,7 +29,9 @@ Route::middleware('auth')->group(function(){
     Route::post('/admin/posts', [PostController::class, 'store'])->name('post.store');
     Route::get('/admin/posts/create', [PostController::class, 'create'])->name('post.create');
     Route::delete('/admin/posts/{post}/delete', [PostController::class, 'delete'])->name('post.delete');
-    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+
     Route::patch('/admin/posts/{post}/update', [PostController::class, 'update'])->name('post.update');
 
 });
+    //can:view,post, added midleware - can - so you can only if policy view is ok, post is the model, you have to pass it to the policy
+    Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->middleware('can:view,post')->name('post.edit');
