@@ -85,7 +85,7 @@ class PostController extends Controller
         $post->body = $inputs['body'];
 
         //policy authorizaztion, you can only ipdate your own post, where user_id is yours id
-
+        //now this policy is in route, as middleware
 //        $this->authorize('update', $post);
 
         Session::flash('message', 'Post has been updated');
