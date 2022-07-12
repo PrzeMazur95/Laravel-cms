@@ -14,6 +14,7 @@ class PostController extends Controller
 
         $posts = Post::all();
 
+
         return view('admin/posts.index', ['posts'=>$posts]);
 
 
