@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,5 @@ Route::middleware('auth')->group(function(){
 });
     //can:view,post, added midleware - can - so you can only if policy view is ok, post is the model, you have to pass it to the policy
     Route::get('/admin/posts/{post}/edit', [PostController::class, 'edit'])->middleware('can:view,post')->name('post.edit');
+
+    Route::get('admin/users/{user}/profile', [UserController::class, 'show'])->name('user.profile.show');
