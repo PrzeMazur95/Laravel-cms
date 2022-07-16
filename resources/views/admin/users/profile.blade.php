@@ -11,6 +11,10 @@
                     <div class="form-group">
                         <input type="file">
                     </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" value="{{$user->username}}">
+                    </div>
 
                     <div class="form-group">
                         <label for="name">Name</label>
