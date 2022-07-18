@@ -50,6 +50,9 @@ class User extends Authenticatable
 
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function posts(){
 
         return $this->hasMany('App\Models\Post');
