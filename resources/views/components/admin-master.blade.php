@@ -55,10 +55,10 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <x-admin-sidebar-postslinks>
+        <x-admin-sidebar-postslinks></x-admin-sidebar-postslinks>
+        <x-admin-sidebar-userslinks></x-admin-sidebar-userslinks>
 
 
-        </x-admin-sidebar-postslinks>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
